@@ -2,26 +2,29 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "master" ]
+    # branches: [ "master" ]
   pull_request:
-    branches: [ "master" ]
+    # branches: [ "master" ]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v3
     
-    - name: configure
-      run: ./configure
+    - name: Test
+      run: echo This is a test
       
-    - name: Install dependencies
-      run: make
+    # - name: configure
+    #   run: ./configure
       
-    - name: Run check
-      run: make check
+    # - name: Install dependencies
+    #   run: make
       
-    - name: Run distcheck
-      run: make distcheck
+    # - name: Run check
+    #   run: make check
+      
+    # - name: Run distcheck
+    #   run: make distcheck
