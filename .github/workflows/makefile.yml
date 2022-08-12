@@ -45,20 +45,20 @@ jobs:
       run: make check
       run: make install
 
-7.  Install openjdk package.
-    ex:  apt-get install openjdk-7-jdk
+# 7.  Install openjdk package.
+#     ex:  apt-get install openjdk-7-jdk
 
-8.  Define JAVA_HOME in the .bashrc file.
-    ex:  export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+# 8.  Define JAVA_HOME in the .bashrc file.
+#     ex:  export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
-9.  Install Apache Maven build manager for Java projects.
-    ex:  apt-get install maven
+# 9.  Install Apache Maven build manager for Java projects.
+#     ex:  apt-get install maven
 
-10. Build the protobuf java .jar file.
-    ex:  cd /opt/protobuf-2.5.0/java
-         mvn test
-         mvn install
-         mvn package
+# 10. Build the protobuf java .jar file.
+#     ex:  cd /opt/protobuf-2.5.0/java
+#          mvn test
+#          mvn install
+#          mvn package
 
 #     The resulting .jar file will be installed as /opt/protobuf-2.5.0/java/target/protobuf-java-2.5.0.jar.
 #     This file must be referenced as the JAVAPROTOBUF_DIR environmental variables for the autoconf configure process. 
