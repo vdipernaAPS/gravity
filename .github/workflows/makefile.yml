@@ -6,6 +6,7 @@ on:
     # branches: [ "master" ]
   pull_request:
     # branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,67 +19,6 @@ jobs:
     
     - name: Test
       run: echo This is a test
-
-    - name: build
-      run: |
-        export PATH=:$PATH:./
-        apt-get update
-        apt-get install g++
-        apt-get install git
-        tar -xvf protobuf-2.5.0.tar -C /opt
-        cd /opt/protobuf-2.5.0
-        configure
-        make
-        make check
-        make install
-        tar -xvf zeromq-3.2.2.tar -C /opt
-        cd /opt/zeromq-3.2.2
-        configure
-        make
-        make check
-        make install
-
-# 7.  Install openjdk package.
-#     ex:  apt-get install openjdk-7-jdk
-
-# 8.  Define JAVA_HOME in the .bashrc file.
-#     ex:  export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-
-# 9.  Install Apache Maven build manager for Java projects.
-#     ex:  apt-get install maven
-
-# 10. Build the protobuf java .jar file.
-#     ex:  cd /opt/protobuf-2.5.0/java
-#          mvn test
-#          mvn install
-#          mvn package
-
-#     The resulting .jar file will be installed as /opt/protobuf-2.5.0/java/target/protobuf-java-2.5.0.jar.
-#     This file must be referenced as the JAVAPROTOBUF_DIR environmental variables for the autoconf configure process. 
-
-# 11. Download the latest Google Guava project core libraries .jar file and note the installed directory.
-#     This file must be referenced as the GUAVAJAR_DIR environmental variables for the autoconf configure process. 
-
-# 12. Install the autoconf package for generating configure scripts.
-#     ex:  apt-get install autoconf
-
-# 13. Install the Flex fast scanner generator and Bison parser generator.
-#     ex:  apt-get install flex bison
-
-# 14. Install the latest Boost C++ libraries.
-#     ex:  apt-get install libboost-all-dev
-
-# 15. Install the Simplified Wrapper and Interface Generator (swig).
-#     ex:  apt-get install swig
-
-# 16. Obtain the latest version of the Gravity software package.
-#     ex:   git clone http://192.168.2.107/git/gravity.git
-
-# 17. Build, install and test the Gravity software package.
-#     ex:  configure JAVAPROTOBUF_DIR=/opt/protobuf-2.5.0/java/target/protobuf-java-2.5.0.jar GUAVAJAR_DIR=/opt/guava-14.0.1.jar CFLAGS=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
-#          make
-#          make install
-#          make test
 
 
     # - name: configure
