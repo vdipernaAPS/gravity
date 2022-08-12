@@ -1,22 +1,20 @@
-name: Makefile CI
+# Steps for setting up CI
+# 1. Create a VM
+# 2. Create a self-hosted runner through Github Actions and follow default instructions
+# 3. Install dependencies for gravity
+# 4. Clone gravity into ~/actions-runner/_work/gravity/gravity
 
+name: Makefile CI
 
 on:
   push:
-    # branches: [ "master" ]
-  pull_request:
-    # branches: [ "master" ]
-  workflow_dispatch:
+    branches: [ "master" ]
 
 jobs:
   build:
-
-    # runs-on: ubuntu-18.04
     runs-on: [self-hosted, linux]
 
     steps:
-    # - uses: actions/checkout@v3
-    
     - name: Build
       run: |
         cd gravity
@@ -29,16 +27,3 @@ jobs:
         
     - name: Test
       run: make test
-
-
-    # - name: configure
-    #   run: ./configure
-      
-    # - name: Install dependencies
-    #   run: make
-      
-    # - name: Run check
-    #   run: make check
-      
-    # - name: Run distcheck
-    #   run: make distcheck
