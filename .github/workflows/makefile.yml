@@ -1,5 +1,8 @@
 name: Makefile CI
 
+
+runs-on: [self-hosted, linux]
+
 on:
   push:
     # branches: [ "master" ]
