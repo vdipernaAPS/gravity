@@ -17,33 +17,24 @@ jobs:
     - name: Test
       run: echo This is a test
 
-    - name: Add "." to the PATH environmental variable in the .bashrc file.
-      run: export PATH=:$PATH:./
-
-    - name: Perform an update on the apt-get utility to get information on the newest version of packages.
-      run: apt-get update
-
-    - name: Install the g++ compiler.
-      run: apt-get install g++
-
-    - name: Install the Git version control and source code management system.
-      run: apt-get install git
-
-    - name: Download the latest available Protocol buffers full source package and install (at least protobuf 2.4.x or greater).
-      run: tar -xvf protobuf-2.5.0.tar -C /opt
-      run: cd /opt/protobuf-2.5.0
-      run: configure
-      run: make
-      run: make check
-      run: make install
-
-    - name: Download ZeroMQ stable release 3.x and install.
-      run: tar -xvf zeromq-3.2.2.tar -C /opt
-      run: cd /opt/zeromq-3.2.2
-      run: configure
-      run: make
-      run: make check
-      run: make install
+    - name: build
+      run: |
+        export PATH=:$PATH:./
+        apt-get update
+        apt-get install g++
+        apt-get install git
+        tar -xvf protobuf-2.5.0.tar -C /opt
+        cd /opt/protobuf-2.5.0
+        configure
+        make
+        make check
+        make install
+        tar -xvf zeromq-3.2.2.tar -C /opt
+        cd /opt/zeromq-3.2.2
+        configure
+        make
+        make check
+        make install
 
 # 7.  Install openjdk package.
 #     ex:  apt-get install openjdk-7-jdk
